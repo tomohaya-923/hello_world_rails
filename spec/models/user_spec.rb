@@ -26,8 +26,10 @@ RSpec.describe User, type: :model do
   # end
 
   context "すでに同じ名前の account が存在しているとき" do
+    before { create(:user, account: "foo") }
+
     it "ユーザー作成に失敗する" do
-      create(:user, account: "foo")
+      # create(:user, account: "foo")
       # User.create!(name: "foo", account: "foo", email: "foo@example.com")
       user = build(:user, account: "foo")
       # user = User.new(name: "bar", account: "foo", email: "bar@example.com")
