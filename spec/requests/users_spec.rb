@@ -97,7 +97,7 @@ RSpec.describe "Users", type: :request do
     let(:user_id) { user.id }
     let!(:user) { create(:user) }
 
-    fit "任意のユーザーのレコードを削除できる" do
+    it "任意のユーザーのレコードを削除できる" do
       expect { subject }.to change { User.count }.by(-1)
     end
   end
